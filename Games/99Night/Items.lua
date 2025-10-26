@@ -11,11 +11,11 @@ return {
         "Carrot",
         "Pumpkin",
         "Berry",
-        "Apple",
+        "Apple"
         "Cake", 
-    }
+    };
     weapon = {
-        "Revolver",
+        "Revolver"
         "Rifle",
     };
     fuel = {
@@ -23,10 +23,10 @@ return {
         "Log",
         "Sapling",
         "Chair",
-        "Fuel Canister",
+        "Fuel Canister"
 
         "Bear Corpse",
-        "Wolf Corpse",
+        "Wolf Corpse"
     };
     scrap = {
         "Sheet Metal",
@@ -48,7 +48,7 @@ return {
         "Old Rod",
         "Old Taming Flute",
         "Good Axe",
-        "Good Sack",
+        "Good Sack"
     };
     heal = {
         "Bandage",
