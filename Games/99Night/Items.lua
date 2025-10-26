@@ -11,11 +11,11 @@ return {
         "Carrot",
         "Pumpkin",
         "Berry",
-        "Apple"
+        "Apple",
         "Cake", 
     };
     weapon = {
-        "Revolver"
+        "Revolver",
         "Rifle",
     };
     fuel = {
@@ -23,10 +23,11 @@ return {
         "Log",
         "Sapling",
         "Chair",
-        "Fuel Canister"
+        "Fuel Canister",
+        "Oil Barrel",
 
         "Bear Corpse",
-        "Wolf Corpse"
+        "Wolf Corpse",
     };
     scrap = {
         "Sheet Metal",
@@ -34,7 +35,10 @@ return {
         "Broken Microwave",
         "Tyre",
         "UFO Scrap",
+        "Old Car Engine"
         "Cultist Gem",
+        "Old Radio",
+        "Washing Machine",
     };
     ammo = {
         "Revolver Ammo",
@@ -42,16 +46,22 @@ return {
     };
     armour = {
         "Leather Body",
+        "Iron Body",
     };
     tools = {
         "Old Flashlight",
         "Old Rod",
         "Old Taming Flute",
+        "Good Sack",
         "Good Axe",
-        "Good Sack"
+        "Strong Axe",
     };
     heal = {
         "Bandage",
         "MedKit",
+    };
+    specials = {
+        "Gem of the Forest Fragment",
+
     }
 }
