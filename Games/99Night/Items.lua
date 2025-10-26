@@ -35,7 +35,7 @@ return {
         "Broken Microwave",
         "Tyre",
         "UFO Scrap",
-        "Old Car Engine"
+        "Old Car Engine",
         "Cultist Gem",
         "Old Radio",
         "Washing Machine",
