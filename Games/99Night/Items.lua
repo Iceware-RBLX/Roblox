@@ -25,11 +25,10 @@ return {
         "Chair",
         "Fuel Canister",
         "Oil Barrel",
-
         "Bear Corpse",
         "Wolf Corpse",
     };
-    scrap = {
+    scrap_metal = {
         "Sheet Metal",
         "Bolt",
         "Broken Microwave",
@@ -39,6 +38,10 @@ return {
         "Cultist Gem",
         "Old Radio",
         "Washing Machine",
+    };
+    scrap_wood = {
+        "Log",
+        "Chair",
     };
     ammo = {
         "Revolver Ammo",
