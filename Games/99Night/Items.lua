@@ -95,11 +95,12 @@ return {
         "Wolf Pelt",
         "Alpha Wolf Pelt",
         "Arctic Fox Pelt",
+        "Bear Pelt",
         "Bunny Foot",
         "Seed Box",
         "Mandrake",
         "Dripleaf",
-        "Stareweed Petal"
+        "Stareweed Petal",
         "Halloween Candle",
     };
 }
