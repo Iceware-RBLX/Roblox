@@ -45,6 +45,7 @@ return {
         "Cultist Gem",
         "Old Radio",
         "Washing Machine",
+        "Metal Chair",
     };
     scrap_wood = {
         "Log",
@@ -79,13 +80,16 @@ return {
         "Sacrifice Totem",
         "Wildfire",
         "Potion",
-        "Coin Stack",
     };
     lost_childrens = {
         "Lost Child",
         "Lost Child2",
         "Lost Child3",
         "Lost Child4",
+    };
+    currencies = {
+        "Coin Stack",
+        "Diamond",
     };
     others = {
         "Wolf Pelt",
@@ -95,6 +99,7 @@ return {
         "Seed Box",
         "Mandrake",
         "Dripleaf",
+        "Stareweed Petal"
         "Halloween Candle",
     };
 }
