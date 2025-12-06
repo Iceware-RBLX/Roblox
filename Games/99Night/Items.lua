@@ -1,20 +1,17 @@
 return {
-    raw_food = {
+    food = {
+        "Carrot",
+        "Berry",
+        "Apple",
+        "Sweet Potato",
+        "Cake", 
         "Morsel",
         "Steak",
         "Ribs",
-    };
-    cooked_food = {
         "Cooked Morsel",
         "Cooked Steak",
         "Cooked Ribs",
-    };
-    food = {
-        "Carrot",
-        "Pumpkin",
-        "Berry",
-        "Apple",
-        "Cake", 
+        "Turkey Leg",
     };
     weapon = {
         "Revolver",
