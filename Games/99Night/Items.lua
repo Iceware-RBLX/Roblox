@@ -111,4 +111,5 @@ return {
         "Scorpion Shell",
         "Cultist King Antler",
     };
+    event = {}
 }
