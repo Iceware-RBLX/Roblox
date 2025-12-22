@@ -4,28 +4,33 @@ return {
         "Berry",
         "Apple",
         "Sweet Potato",
-        "Cake", 
+        "Cake",
+        "Stuffing", 
         "Morsel",
         "Steak",
         "Ribs",
         "Cooked Morsel",
         "Cooked Steak",
         "Cooked Ribs",
-        "Turkey Leg",
+        "Stew",
     };
     weapon = {
-        "Revolver",
-        "Rifle",
-        "Raygun",
+        "Spear",
+        "Morningstar",
+        "Ice Sword",
+        "Trident",
+        "Poison Spear",
+        "Infernal Sword",
+        "Obsidiron Hammer",
     };
     ammo = {
         "Revolver Ammo",
         "Rifle Ammo",
+        "Shotgun Ammo",
     };
     fuel = {
         "Coal",
         "Log",
-        "Sapling",
         "Chair",
         "Fuel Canister",
         "Oil Barrel",
@@ -43,27 +48,36 @@ return {
         "Old Radio",
         "Washing Machine",
         "Metal Chair",
-    };
-    scrap_wood = {
-        "Log",
-        "Chair",
+        "Cultist Experiment",
+        "Cultist Prototype",
     };
     armour = {
         "Leather Body",
         "Iron Body",
         "Thorn Body",
+        "Poison Armor",
+        "Obsidiron Body",
+        "Riot Shield",
+        "Infernal Helmet",
     };
     tools = {
+        "Old Sack",
+        "Good Sack",
+        "Infernal Sack",
+        "Giant Sack",
+        "Old Axe",
+        "Good Axe",
+        "Ice Axe",
+        "Strong Axe",
+        "Chainsaw",
+        "Old Rod",
+        "Good Rod",
+        "Strong Rod",
+        "Old Taming Flute",
+        "Good Taming Flute",
+        "Strong Taming Flute",
         "Old Flashlight",
         "Strong Flashlight",
-        "Old Rod",
-        "Old Taming Flute",
-        "Good Sack",
-        "Giant Sack",
-        "Infernal Sack",
-        "Good Axe",
-        "Strong Axe",
-        "Riot Shield",
     };
     heal = {
         "Bandage",
@@ -77,27 +91,24 @@ return {
         "Sacrifice Totem",
         "Wildfire",
         "Potion",
-    };
-    lost_childrens = {
-        "Lost Child",
-        "Lost Child2",
-        "Lost Child3",
-        "Lost Child4",
+        "Grey Key",
     };
     currencies = {
         "Coin Stack",
         "Diamond",
     };
     others = {
+        "Axe Trim Kit",
+        "Armor Trim Kit",
+        "Blueprint"
+        "Bunny Foot",
         "Wolf Pelt",
         "Alpha Wolf Pelt",
         "Arctic Fox Pelt",
         "Bear Pelt",
-        "Bunny Foot",
-        "Seed Box",
-        "Mandrake",
-        "Dripleaf",
-        "Stareweed Petal",
-        "Halloween Candle",
+        "Polar Bear Pelt",
+        "Mammoth Tusk",
+        "Scorpion Shell",
+        "Cultist King Antler",
     };
 }
