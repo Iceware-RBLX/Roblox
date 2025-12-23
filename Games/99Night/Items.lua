@@ -100,7 +100,7 @@ return {
     others = {
         "Axe Trim Kit",
         "Armor Trim Kit",
-        "Blueprint"
+        "Blueprint",
         "Bunny Foot",
         "Wolf Pelt",
         "Alpha Wolf Pelt",
