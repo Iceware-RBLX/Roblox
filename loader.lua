@@ -23,6 +23,7 @@
 ]]
 
 
+
 if game:GetService('ContentProvider').RequestQueueSize > 10 then           
     repeat task.wait()
     until game:GetService('ContentProvider').RequestQueueSize <= 10
@@ -40,7 +41,7 @@ local shared = {
 
 for _, folder in pairs(shared.folders) do
     if not isfolder(folder) then
-        print(string.format("<font color='rgb(150,220,255)' size='18'>[ ICEWARE ]  Setting up %s folder.</font>", folder))
+        print(string.format("[ ICEWARE ] Setting up %s folder", folder))
         makefolder(folder)
     end
 end
@@ -52,7 +53,7 @@ local games = {
     [{13864667823}] = "https://raw.githubusercontent.com/Iceware-RBLX/Roblox/refs/heads/main/Games/Break%20In%202/Main.lua"; -- Break In 2 (Main Match)
     [{93978595733734}] = "https://raw.githubusercontent.com/Iceware-RBLX/Roblox/refs/heads/main/Games/ViolenceDistrict/Main.lua"; -- Violence District
     [{79546208627805}] = "https://raw.githubusercontent.com/Iceware-RBLX/Roblox/refs/heads/main/Games/Others/Lobbies.lua"; -- 99 Nights (Lobby)
-    [{126509999114328}] = "https://raw.githubusercontent.com/Iceware-RBLX/Roblox/refs/heads/main/Games/Others/Lobbies.lua"; -- 99 Nights (Main Match)
+    [{126509999114328}] = "https://raw.githubusercontent.com/Iceware-RBLX/Roblox/refs/heads/main/Games/99Night/Main.lua"; -- 99 Nights (Main Match)
 
 }
 
@@ -68,4 +69,6 @@ if getgenv().Settings and getgenv().Settings.Analytics then
         appendfile("IceWare/analytics/" .. game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name .. "_" .. os.date("%Y-%m-%d") .. ".log", "[" .. os.date("%H:%M:%S") .. "] [" .. identifyexecutor() .. "] " .. select(1, ...) .. "\n") 
     end)
 end
+
+
 
