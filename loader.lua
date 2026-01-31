@@ -1,26 +1,3 @@
---[[
-                                                                                       
-                                 ====                                                               
-                               +=======                                                             
-                               ========                                                             
-                                ======+                                                             
-                                  ++                                                                
-                                                                                                    
-                              -=======  ====       ========        ========                         
-                              =======   ====      +========       -=======                          
-                             ========  =====      =========+     ========                           
-                             ========  =====     ===========    +=======                            
-                             =======   =====+   ============    =======                             
-                            +=======  =======  =============   ====+++                              
-                            ========  ======= +===+++ ++++++= =+++++++                              
-                            ===++++   ++++++++++++++  +++++++=+++++++                               
-                           +=++++++    ++++++++++++*  ++++++++++++++                                
-                           ++++++++    ++++++++++++    ++++++++++++                                 
-                           ++++++++    +++++++++++     +++++++++++                                  
-                          ++++++++     ++++++++++      ++++++++++                                   
-                          ++++++++      ++++++++        ++++++++                                    
-                                                                                                                                                                                                
-]]
 
 
 
@@ -52,7 +29,8 @@ local games = {
     [{93978595733734}] = "https://raw.githubusercontent.com/Iceware-RBLX/Roblox/refs/heads/main/Games/ViolenceDistrict/Main.lua"; -- Violence District
     [{79546208627805}] = "https://raw.githubusercontent.com/Iceware-RBLX/Roblox/refs/heads/main/Games/Others/Lobbies.lua"; -- 99 Nights (Lobby)
     [{126509999114328}] = "https://raw.githubusercontent.com/Iceware-RBLX/Roblox/refs/heads/main/Games/99Night/Main.lua"; -- 99 Nights (Main Match)
-
+    [{13822562292}] = "https://raw.githubusercontent.com/Iceware-RBLX/Roblox/refs/heads/main/Games/MidnightChasers/Main.lua"; -- Midnight Chasers (Tokyo)
+    [{4793836769}] = "https://raw.githubusercontent.com/Iceware-RBLX/Roblox/refs/heads/main/Games/MidnightChasers/Main.lua"; -- Midnight Chasers (Salt Flats)
 }
 
 for ids, url in next, games do
@@ -67,6 +45,4 @@ if getgenv().Settings and getgenv().Settings.Analytics then
         appendfile("IceWare/analytics/" .. game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name .. "_" .. os.date("%Y-%m-%d") .. ".log", "[" .. os.date("%H:%M:%S") .. "] [" .. identifyexecutor() .. "] " .. select(1, ...) .. "\n") 
     end)
 end
-
-
 
