@@ -6,6 +6,10 @@ if game:GetService('ContentProvider').RequestQueueSize > 10 then
     until game:GetService('ContentProvider').RequestQueueSize <= 10
 end
 
+game:GetService("Players").LocalPlayer.Idled:connect(function()
+    game:GetService("VirtualUser"):ClickButton2(Vector2.new())
+end)
+
 
 local shared = {
     version = "V3.0.0";
