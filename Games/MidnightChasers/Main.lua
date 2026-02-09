@@ -8827,7 +8827,7 @@ local Pages = {
 do
     local Section = Pages["Main"]:Section({Name = "Key", Icon = "", Side = 1})
 
-    Section:Label("blablabla will do later", "Center")
+    Section:Label("Enter your key to get started!", "Center")
 
     Section:Textbox({
         Name = "Key Input",
@@ -8851,7 +8851,7 @@ do
                     Description = "There was an error trying to check your key, check console for details",
                     Duration = 6
                 })
-            print(status.code)
+            	print(status.code)
             end
         end
     })
