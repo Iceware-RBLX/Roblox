@@ -1,5 +1,3 @@
--- Do not mind this, it isnt permanent
-
 if getgenv().Library then
     getgenv().Library:Unload()
 end
@@ -5927,7 +5925,7 @@ local Library do
                 Logo = Data.Logo or Data.logo or "135215559087473",
                 FadeSpeed = Data.FadeSpeed or Data.fadespeed or 0.2,
                 Version = Data.Version or Data.version or "v1.0.0 alpha",
-                Size = not IsMobile and UDim2New(0, 700, 0, 300) or UDim2New(0, 700, 0, 300),
+                Size = not IsMobile and UDim2New(0, 700, 0, 350) or UDim2New(0, 700, 0, 350),
                 Game = Data.Game or Data.game or nil,
 
                 Pages = { },
@@ -8803,10 +8801,19 @@ local Library do
         
 end 
 
--- couldnt be bothered to put that on the gh since its most likely aint gonna stay :joy:
 local api = loadstring(game:HttpGet("https://sdkapi-public.luarmor.net/library.lua"))()
 api.script_id = "ce62b4827c4d77b687a111580968f6ae"
 
+if isfile("IceWare/Key System/Key.text") then
+    local status = api.check_key(tostring(readfile("IceWare/Key System/Key.text")))
+    
+    if status.code == "KEY_VALID" then
+        api.load_script()
+        return
+    else
+        delfile("IceWare/Key System/Key.text")
+    end
+end
 
 local Window = Library:Window({
     Name = "IceWare",
@@ -8827,7 +8834,7 @@ local Pages = {
 do
     local Section = Pages["Main"]:Section({Name = "Key", Icon = "", Side = 1})
 
-    Section:Label("Enter your key to get started!", "Center")
+    Section:Label("Enter your key to continue", "Center")
 
     Section:Textbox({
         Name = "Key Input",
@@ -8844,6 +8851,7 @@ do
             local status = api.check_key(Options.KeyInput.Value); 
 
             if (status.code == "KEY_VALID") then
+                writefile("IceWare/Key System/Key.text", tostring(Options.KeyInput.Value))
                 api.load_script();
             else
                 Library:Notification({
@@ -8851,18 +8859,30 @@ do
                     Description = "There was an error trying to check your key, check console for details",
                     Duration = 6
                 })
-            	print(status.code)
+            print(status.code)
             end
         end
     })
     
     Section:Button({
-        Name = "Get Key",
+        Name = "Get Key [12H, 1 Checkpoint]",
         Callback = function()
             setclipboard("https://ads.luarmor.net/get_key?for=IceWare-mnyrvJtvgHGI")
             Library:Notification({
                 Name = "IceWare",
-                Description = "Key has been copied to your clipboard!",
+                Description = "Link has been copied to your clipboard!",
+                Duration = 6
+            })
+        end
+    })
+    
+    Section:Button({
+        Name = "Get Key [1D, 2 Checkpoint]",
+        Callback = function()
+            setclipboard("https://ads.luarmor.net/get_key?for=IceWare2-aMjjHLipzMLf")
+            Library:Notification({
+                Name = "IceWare",
+                Description = "Link has been copied to your clipboard!",
                 Duration = 6
             })
         end
