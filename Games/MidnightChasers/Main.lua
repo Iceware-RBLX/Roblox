@@ -8801,10 +8801,19 @@ local Library do
         
 end 
 
--- couldnt be bothered to put that on the gh since its most likely aint gonna stay :joy:
 local api = loadstring(game:HttpGet("https://sdkapi-public.luarmor.net/library.lua"))()
 api.script_id = "cd43aea36ab7414b554c79b69814fbcc"
 
+if isfile("IceWare/Key System/Key.text") then
+    local status = api.check_key(tostring(readfile("IceWare/Key System/Key.text")))
+    
+    if status.code == "KEY_VALID" then
+        api.load_script()
+        return
+    else
+        delfile("IceWare/Key System/Key.text")
+    end
+end
 
 local Window = Library:Window({
     Name = "IceWare",
@@ -8842,6 +8851,7 @@ do
             local status = api.check_key(Options.KeyInput.Value); 
 
             if (status.code == "KEY_VALID") then
+                writefile("IceWare/Key System/Key.text", tostring(Options.KeyInput.Value))
                 api.load_script();
             else
                 Library:Notification({
