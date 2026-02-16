@@ -32,9 +32,11 @@ writefile("IceWare/Discord.txt", "https://discord.gg/sn2Etx6M8G")
 local games = {
     [{93978595733734}] = "https://raw.githubusercontent.com/Iceware-RBLX/Roblox/refs/heads/main/Games/ViolenceDistrict/Main.lua"; -- Violence District
     [{79546208627805}] = "https://raw.githubusercontent.com/Iceware-RBLX/Roblox/refs/heads/main/Games/Others/Lobbies.lua"; -- 99 Nights (Lobby)
-    [{126509999114328}] = "https://raw.githubusercontent.com/Iceware-RBLX/Roblox/refs/heads/main/Games/99Night/Main.lua"; -- 99 Nights (Main Match)
+    [{126509999114328}] = "https://raw.githubusercontent.com/Iceware-RBLX/Roblox/refs/heads/main/Games/99Night/Main.lua"; -- 99 Nights (Game)
     [{13822562292}] = "https://raw.githubusercontent.com/Iceware-RBLX/Roblox/refs/heads/main/Games/MidnightChasers/Main.lua"; -- Midnight Chasers (Tokyo)
-    [{139048751758942}] = "https://raw.githubusercontent.com/Iceware-RBLX/Roblox/refs/heads/main/Games/MidnightChasers/Main.lua"; -- Midnight Chasers (Salt Flats)
+    [{4793836769}] = "https://raw.githubusercontent.com/Iceware-RBLX/Roblox/refs/heads/main/Games/MidnightChasers/Main.lua"; -- Midnight Chasers (Salt Flats)
+    [{107467295209358}] = "https://raw.githubusercontent.com/Iceware-RBLX/Roblox/refs/heads/main/Games/Others/Lobbies.lua"; -- A Desrt (Lobby)
+    [{125224440903394}] = "https://raw.githubusercontent.com/Iceware-RBLX/Roblox/refs/heads/main/Games/Desrt/Main.lua"; -- A Desrt (Game)
 }
 
 for ids, url in next, games do
