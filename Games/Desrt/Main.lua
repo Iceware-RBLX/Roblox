@@ -8851,6 +8851,11 @@ do
             local status = api.check_key(Options.KeyInput.Value); 
 
             if (status.code == "KEY_VALID") then
+				Library:Notification({
+                	Name = "IceWare",
+            		Description = "Valid key, loading the script..",
+            		Duration = 3
+            	})
                 writefile("IceWare/Key System/Key.text", tostring(Options.KeyInput.Value))
                 api.load_script();
             else
