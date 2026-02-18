@@ -37,6 +37,7 @@ local games = {
     [{139048751758942}] = "https://raw.githubusercontent.com/Iceware-RBLX/Roblox/refs/heads/main/Games/MidnightChasers/Main.lua"; -- Midnight Chasers (Salt Flats)
     [{107467295209358}] = "https://raw.githubusercontent.com/Iceware-RBLX/Roblox/refs/heads/main/Games/Others/Lobbies.lua"; -- A Desrt (Lobby)
     [{125224440903394}] = "https://raw.githubusercontent.com/Iceware-RBLX/Roblox/refs/heads/main/Games/Desrt/Main.lua"; -- A Desrt (Game)
+    [{3351674303}] = "https://raw.githubusercontent.com/Iceware-RBLX/Roblox/refs/heads/main/Games/DrivingEmpire/Main.lua"; -- Driving Empire
 }
 
 for ids, url in next, games do
@@ -51,4 +52,3 @@ if getgenv().Settings and getgenv().Settings.Analytics then
         appendfile("IceWare/analytics/" .. game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name .. "_" .. os.date("%Y-%m-%d") .. ".log", "[" .. os.date("%H:%M:%S") .. "] [" .. identifyexecutor() .. "] " .. select(1, ...) .. "\n") 
     end)
 end
-
