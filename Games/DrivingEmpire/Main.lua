@@ -8802,7 +8802,7 @@ local Library do
 end 
 
 local api = loadstring(game:HttpGet("https://sdkapi-public.luarmor.net/library.lua"))()
-api.script_id = "cd43aea36ab7414b554c79b69814fbcc"
+api.script_id = "cee7c44253b57f6cfdd3499c5f97a8cf"
 
 if isfile("IceWare/Key System/Key.text") then
     local status = api.check_key(tostring(readfile("IceWare/Key System/Key.text")))
