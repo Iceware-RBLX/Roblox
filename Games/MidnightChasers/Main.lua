@@ -408,15 +408,6 @@ local Library do
                 return
             end
 
-            if Event == "MouseButton1Down" or Event == "MouseButton1Click" then 
-                if IsMobile then 
-                    Event = "TouchTap"
-                end
-            elseif Event == "MouseButton2Down" or Event == "MouseButton2Click" then 
-                if IsMobile then
-                    Event = "TouchLongPress"
-                end
-            end
 
             return Library:Connect(self.Instance[Event], Callback, Name)
         end
@@ -3180,7 +3171,7 @@ local Library do
             end)
 
             Library:Connect(UserInputService.InputBegan, function(Input)
-                if Input.UserInputType == Enum.UserInputType.MouseButton1 then
+                if Input.UserInputType == Enum.UserInputType.MouseButton1 or Input.UserInputType == Enum.UserInputType.Touch then
                     if not Colorpicker.IsOpen then
                         return
                     end
@@ -4097,7 +4088,7 @@ local Library do
                     end
                 end
 
-                if Input.UserInputType == Enum.UserInputType.MouseButton1 then 
+                if Input.UserInputType == Enum.UserInputType.MouseButton1 or Input.UserInputType == Enum.UserInputType.Touch then 
                     if Library:IsMouseOverFrame(Items["KeybindWindow"]) or Library:IsMouseOverFrame(ModesDropdownItems["OptionHolder"]) then 
                         return
                     end
@@ -6363,26 +6354,28 @@ local Library do
                     end)
                 end
 
-                UserInputService.MouseIconEnabled = false
+                if not IsMobile then
+                    UserInputService.MouseIconEnabled = false
 
-                Items["MouseImage"] = Instances:Create("ImageLabel", {
-                    Parent = Library.Holder.Instance,
-                    Name = "\0",
-                    ScaleType = Enum.ScaleType.Fit,
-                    BorderColor3 = FromRGB(0, 0, 0),
-                    Image = "rbxassetid://136489814131946",
-                    BackgroundTransparency = 1,
-                    Position = UDim2New(0, 0, 0, 0),
-                    Size = UDim2New(0, 20, 0, 20),
-                    ZIndex = 99999,
-                    BorderSizePixel = 0,
-                    BackgroundColor3 = FromRGB(255, 255, 255)
-                })  Items["MouseImage"]:AddToTheme({ImageColor3 = "Accent"})
+                    Items["MouseImage"] = Instances:Create("ImageLabel", {
+                        Parent = Library.Holder.Instance,
+                        Name = "\0",
+                        ScaleType = Enum.ScaleType.Fit,
+                        BorderColor3 = FromRGB(0, 0, 0),
+                        Image = "rbxassetid://136489814131946",
+                        BackgroundTransparency = 1,
+                        Position = UDim2New(0, 0, 0, 0),
+                        Size = UDim2New(0, 20, 0, 20),
+                        ZIndex = 99999,
+                        BorderSizePixel = 0,
+                        BackgroundColor3 = FromRGB(255, 255, 255)
+                    })  Items["MouseImage"]:AddToTheme({ImageColor3 = "Accent"})
 
-                Library:Connect(RunService.RenderStepped, function()
-                    local MouseLocation = UserInputService:GetMouseLocation() 
-                    Items["MouseImage"].Instance.Position = UDim2New(0, MouseLocation.X - 1, 0, MouseLocation.Y - 56)
-                end)
+                    Library:Connect(RunService.RenderStepped, function()
+                        local MouseLocation = UserInputService:GetMouseLocation() 
+                        Items["MouseImage"].Instance.Position = UDim2New(0, MouseLocation.X - 1, 0, MouseLocation.Y - 56)
+                    end)
+                end
             end
 
             local Debounce = false 
@@ -6439,11 +6432,11 @@ local Library do
                     Items["MainFrame"].Instance.Visible = Bool
 
                     if Window.IsOpen then
-                        Items["MouseImage"].Instance.Visible = true
-                        UserInputService.MouseIconEnabled = false 
+                        if Items["MouseImage"] then Items["MouseImage"].Instance.Visible = true end
+                        if not IsMobile then UserInputService.MouseIconEnabled = false end
                     else
-                        Items["MouseImage"].Instance.Visible = false
-                        UserInputService.MouseIconEnabled = true 
+                        if Items["MouseImage"] then Items["MouseImage"].Instance.Visible = false end
+                        if not IsMobile then UserInputService.MouseIconEnabled = true end
                     end
                 end)
             end
