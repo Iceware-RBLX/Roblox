@@ -709,16 +709,16 @@ local Library do
 
     local Themes = {
         ["Default"] = {
-            ["Background"] = FromRGB(16, 18, 21),
-            ["Inline"] = FromRGB(22, 25, 29),
+            ["Background"] = FromRGB(11, 10, 14),
+            ["Inline"] = FromRGB(14, 14, 19),
             ["Shadow"] = FromRGB(0, 0, 0),
             ["Text"] = FromRGB(255, 255, 255),
             ["Image"] = FromRGB(255, 255, 255),
             ["Dark Gradient"] = FromRGB(211, 211, 211),
             ["Inactive Text"] = FromRGB(185, 185, 185),
-            ["Element"] = FromRGB(34, 39, 45),
-            ["Accent"] = FromRGB(196, 231, 255),
-            ["Border"] = FromRGB(32, 36, 42)
+            ["Element"] = FromRGB(22, 22, 26),
+            ["Accent"] = FromRGB(255, 255, 255),
+            ["Border"] = FromRGB(29, 29, 33)
         },
 
         ["White"] = {
@@ -8808,6 +8808,7 @@ if isfile("IceWare/Key System/Key.text") then
     local status = api.check_key(tostring(readfile("IceWare/Key System/Key.text")))
     
     if status.code == "KEY_VALID" then
+        script_key = tostring(tostring(readfile("IceWare/Key System/Key.text")))
         api.load_script()
         return
     else
@@ -8857,6 +8858,7 @@ do
             		Duration = 3
             	})
                 writefile("IceWare/Key System/Key.text", tostring(Options.KeyInput.Value))
+                script_key = tostring(Options.KeyInput.Value)
                 api.load_script();
             else
                 Library:Notification({
