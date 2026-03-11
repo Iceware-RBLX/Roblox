@@ -408,15 +408,6 @@ local Library do
                 return
             end
 
-            if Event == "MouseButton1Down" or Event == "MouseButton1Click" then 
-                if IsMobile then 
-                    Event = "TouchTap"
-                end
-            elseif Event == "MouseButton2Down" or Event == "MouseButton2Click" then 
-                if IsMobile then
-                    Event = "TouchLongPress"
-                end
-            end
 
             return Library:Connect(self.Instance[Event], Callback, Name)
         end
@@ -709,16 +700,16 @@ local Library do
 
     local Themes = {
         ["Default"] = {
-            ["Background"] = FromRGB(16, 18, 21),
-            ["Inline"] = FromRGB(22, 25, 29),
+            ["Background"] = FromRGB(11, 10, 14),
+            ["Inline"] = FromRGB(14, 14, 19),
             ["Shadow"] = FromRGB(0, 0, 0),
             ["Text"] = FromRGB(255, 255, 255),
             ["Image"] = FromRGB(255, 255, 255),
             ["Dark Gradient"] = FromRGB(211, 211, 211),
             ["Inactive Text"] = FromRGB(185, 185, 185),
-            ["Element"] = FromRGB(34, 39, 45),
-            ["Accent"] = FromRGB(196, 231, 255),
-            ["Border"] = FromRGB(32, 36, 42)
+            ["Element"] = FromRGB(22, 22, 26),
+            ["Accent"] = FromRGB(255, 255, 255),
+            ["Border"] = FromRGB(29, 29, 33)
         },
 
         ["White"] = {
@@ -3180,7 +3171,7 @@ local Library do
             end)
 
             Library:Connect(UserInputService.InputBegan, function(Input)
-                if Input.UserInputType == Enum.UserInputType.MouseButton1 then
+                if Input.UserInputType == Enum.UserInputType.MouseButton1 or Input.UserInputType == Enum.UserInputType.Touch then
                     if not Colorpicker.IsOpen then
                         return
                     end
@@ -4097,7 +4088,7 @@ local Library do
                     end
                 end
 
-                if Input.UserInputType == Enum.UserInputType.MouseButton1 then 
+                if Input.UserInputType == Enum.UserInputType.MouseButton1 or Input.UserInputType == Enum.UserInputType.Touch then 
                     if Library:IsMouseOverFrame(Items["KeybindWindow"]) or Library:IsMouseOverFrame(ModesDropdownItems["OptionHolder"]) then 
                         return
                     end
@@ -6363,26 +6354,28 @@ local Library do
                     end)
                 end
 
-                UserInputService.MouseIconEnabled = false
+                if not IsMobile then
+                    UserInputService.MouseIconEnabled = false
 
-                Items["MouseImage"] = Instances:Create("ImageLabel", {
-                    Parent = Library.Holder.Instance,
-                    Name = "\0",
-                    ScaleType = Enum.ScaleType.Fit,
-                    BorderColor3 = FromRGB(0, 0, 0),
-                    Image = "rbxassetid://136489814131946",
-                    BackgroundTransparency = 1,
-                    Position = UDim2New(0, 0, 0, 0),
-                    Size = UDim2New(0, 20, 0, 20),
-                    ZIndex = 99999,
-                    BorderSizePixel = 0,
-                    BackgroundColor3 = FromRGB(255, 255, 255)
-                })  Items["MouseImage"]:AddToTheme({ImageColor3 = "Accent"})
+                    Items["MouseImage"] = Instances:Create("ImageLabel", {
+                        Parent = Library.Holder.Instance,
+                        Name = "\0",
+                        ScaleType = Enum.ScaleType.Fit,
+                        BorderColor3 = FromRGB(0, 0, 0),
+                        Image = "rbxassetid://136489814131946",
+                        BackgroundTransparency = 1,
+                        Position = UDim2New(0, 0, 0, 0),
+                        Size = UDim2New(0, 20, 0, 20),
+                        ZIndex = 99999,
+                        BorderSizePixel = 0,
+                        BackgroundColor3 = FromRGB(255, 255, 255)
+                    })  Items["MouseImage"]:AddToTheme({ImageColor3 = "Accent"})
 
-                Library:Connect(RunService.RenderStepped, function()
-                    local MouseLocation = UserInputService:GetMouseLocation() 
-                    Items["MouseImage"].Instance.Position = UDim2New(0, MouseLocation.X - 1, 0, MouseLocation.Y - 56)
-                end)
+                    Library:Connect(RunService.RenderStepped, function()
+                        local MouseLocation = UserInputService:GetMouseLocation() 
+                        Items["MouseImage"].Instance.Position = UDim2New(0, MouseLocation.X - 1, 0, MouseLocation.Y - 56)
+                    end)
+                end
             end
 
             local Debounce = false 
@@ -6439,11 +6432,11 @@ local Library do
                     Items["MainFrame"].Instance.Visible = Bool
 
                     if Window.IsOpen then
-                        Items["MouseImage"].Instance.Visible = true
-                        UserInputService.MouseIconEnabled = false 
+                        if Items["MouseImage"] then Items["MouseImage"].Instance.Visible = true end
+                        if not IsMobile then UserInputService.MouseIconEnabled = false end
                     else
-                        Items["MouseImage"].Instance.Visible = false
-                        UserInputService.MouseIconEnabled = true 
+                        if Items["MouseImage"] then Items["MouseImage"].Instance.Visible = false end
+                        if not IsMobile then UserInputService.MouseIconEnabled = true end
                     end
                 end)
             end
@@ -8808,6 +8801,7 @@ if isfile("IceWare/Key System/Key.text") then
     local status = api.check_key(tostring(readfile("IceWare/Key System/Key.text")))
     
     if status.code == "KEY_VALID" then
+        script_key = tostring(tostring(readfile("IceWare/Key System/Key.text")))
         api.load_script()
         return
     else
@@ -8857,6 +8851,7 @@ do
             		Duration = 3
             	})
                 writefile("IceWare/Key System/Key.text", tostring(Options.KeyInput.Value))
+                script_key = tostring(Options.KeyInput.Value)
                 api.load_script();
             else
                 Library:Notification({
