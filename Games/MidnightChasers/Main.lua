@@ -1,3 +1,10 @@
+if identifyexecutor and (identifyexecutor():lower():find("solara") or identifyexecutor():lower():find("xeno")) then
+    setclipboard("https://realvelocity.xyz/")
+    game.Players.LocalPlayer:Kick("Your executor is not supported, please use velocity (free) \n\n https://realvelocity.xyz/\n(Copied to your clipboard)")
+    return
+end
+
+
 if getgenv().Library then
     getgenv().Library:Unload()
 end
