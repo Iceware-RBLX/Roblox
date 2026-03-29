@@ -36,7 +36,6 @@ local games = {
     [{13822562292}] = "https://raw.githubusercontent.com/Iceware-RBLX/Roblox/refs/heads/main/Games/MidnightChasers/Main.lua"; -- Midnight Chasers (Tokyo)
     [{139048751758942}] = "https://raw.githubusercontent.com/Iceware-RBLX/Roblox/refs/heads/main/Games/MidnightChasers/Main.lua"; -- Midnight Chasers (Salt Flats)
     [{3351674303}] = "https://raw.githubusercontent.com/Iceware-RBLX/Roblox/refs/heads/main/Games/DrivingEmpire/Main.lua"; -- Driving Empire
-    [{130594398886540}] = "https://raw.githubusercontent.com/Iceware-RBLX/Roblox/refs/heads/main/Games/GardenHorizons/Main.lua"; -- Garden Horizons
 }
 
 for ids, url in next, games do
