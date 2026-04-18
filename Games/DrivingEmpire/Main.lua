@@ -8865,9 +8865,9 @@ do
     })
     
     Section:Button({
-        Name = "Get Key [12H, 1 Checkpoint]",
+        Name = "Get Key [Lootlabs]",
         Callback = function()
-            setclipboard("https://ads.luarmor.net/get_key?for=IceWare-mnyrvJtvgHGI")
+            setclipboard("https://ads.luarmor.net/get_key?for=IceWare-LrVPJfkTgugZ")
             Library:Notification({
                 Name = "IceWare",
                 Description = "Link has been copied to your clipboard!",
@@ -8877,9 +8877,9 @@ do
     })
     
     Section:Button({
-        Name = "Get Key [1D, 2 Checkpoint]",
+        Name = "Get Key [Work.ink]",
         Callback = function()
-            setclipboard("https://ads.luarmor.net/get_key?for=IceWare2-aMjjHLipzMLf")
+            setclipboard("https://ads.luarmor.net/get_key?for=IceWare-aMjjHLipzMLf")
             Library:Notification({
                 Name = "IceWare",
                 Description = "Link has been copied to your clipboard!",
