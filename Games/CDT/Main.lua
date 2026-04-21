@@ -1,3 +1,68 @@
+-- Meow
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+if isfile("IceWare/Key System/Key.text") then -- delete old
+    delfile("IceWare/Key System/Key.text")
+end
+
 if getgenv().Library then
     getgenv().Library:Unload()
 end
@@ -6031,7 +6096,7 @@ local Library do
                 Items["Topbar"] = Instances:Create("Frame", {
                     Parent = Items["MainFrame"].Instance,
                     Name = "\0",
-                    Size = UDim2New(1, 0, 0, 35),
+                    Size = UDim2New(1, 0, 0, 30),
                     BorderColor3 = FromRGB(0, 0, 0),
                     ZIndex = 2,
                     BorderSizePixel = 0,
@@ -6041,7 +6106,7 @@ local Library do
                 Instances:Create("UICorner", {
                     Parent = Items["Topbar"].Instance,
                     Name = "\0",
-                    CornerRadius = UDimNew(0, 5)
+                    CornerRadius = UDimNew(0, 8)
                 })
 
                 Instances:Create("Frame", {
@@ -6078,29 +6143,46 @@ local Library do
                     return RGBSequence{RGBSequenceKeypoint(0, FromRGB(255, 255, 255)), RGBSequenceKeypoint(1, Library.Theme["Dark Gradient"])}
                 end})
 
-                Items["Logo"] = Instances:Create("ImageLabel", {
+                Items["TitleHolder"] = Instances:Create("Frame", {
                     Parent = Items["Topbar"].Instance,
+                    Name = "\0",
+                    BackgroundTransparency = 1,
+                    Position = UDim2New(0, 7, 0.5, 0),
+                    AnchorPoint = Vector2New(0, 0.5),
+                    AutomaticSize = Enum.AutomaticSize.XY
+                })
+
+                Instances:Create("UIListLayout", {
+                    Parent = Items["TitleHolder"].Instance,
+                    Name = "\0",
+                    FillDirection = Enum.FillDirection.Horizontal,
+                    VerticalAlignment = Enum.VerticalAlignment.Center,
+                    Padding = UDimNew(0, 8),
+                    SortOrder = Enum.SortOrder.LayoutOrder
+                })
+
+                Items["Logo"] = Instances:Create("ImageLabel", {
+                    Parent = Items["TitleHolder"].Instance,
                     Name = "\0",
                     ImageColor3 = FromRGB(196, 231, 255),
                     ScaleType = Enum.ScaleType.Fit,
                     BorderColor3 = FromRGB(0, 0, 0),
                     Size = UDim2New(0, 22, 0, 22),
-                    AnchorPoint = Vector2New(0, 0.5),
                     Image = "rbxassetid://"..Window.Logo,
                     BackgroundTransparency = 1,
-                    Position = UDim2New(0, 7, 0.5, 0),
                     ZIndex = 2,
+                    LayoutOrder = 1,
                     BorderSizePixel = 0,
                     BackgroundColor3 = FromRGB(255, 255, 255)
                 })  Items["Logo"]:AddToTheme({ImageColor3 = "Accent"})
 
                 Items["Title"] = Instances:Create("TextLabel", {
-                    Parent = Items["Topbar"].Instance,
+                    Parent = Items["TitleHolder"].Instance,
                     Name = "\0",
                     FontFace = Library.Font,
-                    AnchorPoint = Vector2New(0, 0.5),
                     ZIndex = 2,
                     TextSize = 14,
+                    LayoutOrder = 2,
                     Size = UDim2New(0, 0, 0, 15),
                     RichText = true,
                     TextColor3 = FromRGB(255, 255, 255),
@@ -6108,20 +6190,19 @@ local Library do
                     Text = Window.Name,
                     BackgroundTransparency = 1,
                     TextXAlignment = Enum.TextXAlignment.Left,
-                    Position = UDim2New(0, 37, 0.5, 0),
                     BorderSizePixel = 0,
                     AutomaticSize = Enum.AutomaticSize.X,
                     BackgroundColor3 = FromRGB(255, 255, 255)
                 })  Items["Title"]:AddToTheme({TextColor3 = "Text"})
 
                 Items["Version"] = Instances:Create("Frame", {
-                    Parent = Items["Title"].Instance,
+                    Parent = Items["TitleHolder"].Instance,
                     Name = "\0",
                     BorderColor3 = FromRGB(0, 0, 0),
                     Size = UDim2New(0, 0, 0, 15),
-                    Position = UDim2New(1, 5, 0, 1),
                     BorderSizePixel = 0,
                     ZIndex = 2,
+                    LayoutOrder = 3,
                     AutomaticSize = Enum.AutomaticSize.X,
                     BackgroundColor3 = FromRGB(16, 18, 21)
                 })  Items["Version"]:AddToTheme({BackgroundColor3 = "Background"})
@@ -6142,7 +6223,7 @@ local Library do
                     Text = Window.Version,
                     AutomaticSize = Enum.AutomaticSize.X,
                     Size = UDim2New(0, 0, 0, 15),
-                    Position = UDim2New(0, -2, 0, 0),
+                    Position = UDim2New(0, 0, 0, 0),
                     BorderSizePixel = 0,
                     BackgroundTransparency = 1,
                     TextXAlignment = Enum.TextXAlignment.Left,
@@ -6197,7 +6278,7 @@ local Library do
                     AnchorPoint = Vector2New(1, 0.5),
                     Image = "rbxassetid://94817928404736",
                     BackgroundTransparency = 1,
-                    Position = UDim2New(1, -27, 0.5, -5),
+                    Position = UDim2New(1, -27, 0.5, 0),
                     ZIndex = 2,
                     BorderSizePixel = 0,
                     BackgroundColor3 = FromRGB(255, 255, 255)
@@ -6232,8 +6313,8 @@ local Library do
                     Name = "\0",
                     BorderColor3 = FromRGB(0, 0, 0),
                     BackgroundTransparency = 1,
-                    Position = UDim2New(0, 0, 0, 35),
-                    Size = UDim2New(1, 0, 1, -35),
+                    Position = UDim2New(0, 0, 0, 30),
+                    Size = UDim2New(1, 0, 1, -30),
                     ClipsDescendants = true,
                     ZIndex = 2,
                     BorderSizePixel = 0,
@@ -8506,7 +8587,8 @@ local Library do
                     Position = UDim2New(0, 0, 0.5, 0),
                     BorderSizePixel = 0,
                     TextSize = 14,
-                    BackgroundColor3 = FromRGB(255, 255, 255)
+                    BackgroundColor3 = FromRGB(255, 255, 255),
+                    RichText = true,
                 })  Items["Text"]:AddToTheme({TextColor3 = "Text"})
 
                 Instances:Create("UIPadding", {
@@ -8797,15 +8879,15 @@ end
 local api = loadstring(game:HttpGet("https://sdkapi-public.luarmor.net/library.lua"))()
 api.script_id = "c8f2f24014df7b0b0a7071e207dc28c0"
 
-if isfile("IceWare/Key System/Key.text") then
-    local status = api.check_key(tostring(readfile("IceWare/Key System/Key.text")))
+if isfile("IceWare/Key System/Key.json") then
+    local status = api.check_key(game:GetService("HttpService"):JSONDecode(readfile("IceWare/Key System/Key.json")).Key)
     
     if status.code == "KEY_VALID" then
-        script_key = tostring(tostring(readfile("IceWare/Key System/Key.text")))
+        script_key = game:GetService("HttpService"):JSONDecode(readfile("IceWare/Key System/Key.json")).Key
         api.load_script()
         return
     else
-        delfile("IceWare/Key System/Key.text")
+        delfile("IceWare/Key System/Key.json")
     end
 end
 
@@ -8820,19 +8902,19 @@ local Pages = {
     ["Main"] = Window:Page({
         Name = "Key System", 
         Icon = "84693206442598",
-        Columns = 1,
+        Columns = 2,
         SubPages = false,
     }),
 }
 
 do
-    local Section = Pages["Main"]:Section({Name = "Key", Icon = "", Side = 1})
+    local Section = Pages["Main"]:Section({Name = "Key Verification", Icon = "", Side = 1})
 
-    Section:Label("Enter your key to continue", "Center")
+    Section:Label("Enter your key to unlock access", "Center")
 
     Section:Textbox({
         Name = "Key Input",
-        Placeholder = "1234-5678-910",
+        Placeholder = "Enter your key here..",
         Flag = "KeyInput",
         Callback = function()
 
@@ -8846,30 +8928,30 @@ do
 
             if (status.code == "KEY_VALID") then
 				Library:Notification({
-                	Name = "IceWare",
+                	Name = "Notification",
             		Description = "Valid key, loading the script..",
             		Duration = 3
             	})
-                writefile("IceWare/Key System/Key.text", tostring(Options.KeyInput.Value))
+                writefile("IceWare/Key System/Key.json", game:GetService("HttpService"):JSONEncode({Key = Options.KeyInput.Value}))
                 script_key = tostring(Options.KeyInput.Value)
                 api.load_script();
             else
                 Library:Notification({
-                    Name = "IceWare",
+                    Name = "Notification",
                     Description = "There was an error trying to check your key, check console for details",
                     Duration = 6
                 })
-            print(status.code)
+                print(status.code)
             end
         end
     })
     
     Section:Button({
-        Name = "Get Key [12H, 1 Checkpoint]",
+        Name = "Get Key (12H)",
         Callback = function()
             setclipboard("https://ads.luarmor.net/get_key?for=IceWare-mnyrvJtvgHGI")
             Library:Notification({
-                Name = "IceWare",
+                Name = "Notification",
                 Description = "Link has been copied to your clipboard!",
                 Duration = 6
             })
@@ -8877,24 +8959,33 @@ do
     })
     
     Section:Button({
-        Name = "Get Key [1D, 2 Checkpoint]",
+        Name = "Get Key (1D)",
         Callback = function()
-            setclipboard("https://ads.luarmor.net/get_key?for=IceWare2-aMjjHLipzMLf")
+            setclipboard("https://ads.luarmor.net/get_key?for=IceWare-aMjjHLipzMLf")
             Library:Notification({
-                Name = "IceWare",
+                Name = "Notification",
                 Description = "Link has been copied to your clipboard!",
                 Duration = 6
             })
         end
     })
 
+    local Section = Pages["Main"]:Section({Name = "Information", Icon = "", Side = 2})
+
+    Section:Label("Keys are tied to your HWID, alternates devices will not work with the same key\n\n", "Center")
+
+    Section:Label("Premium removes the key system and gives you access to the best features, join our discord to learn more", "Center")
+
+    local Section = Pages["Main"]:Section({Name = "Discord", Icon = "", Side = 2})
+
+    Section:Label("Need help or updates? Join our Discord server\n", "Center")
+
     Section:Button({
         Name = "Join Discord",
         Callback = function()
             task.spawn(function()
                 if request then
-                    local HttpService = game:GetService("HttpService")
-                    local reqSuccess, reqErr = pcall(function()
+                    local Success, Err = pcall(function()
                         request({
                             Url = "http://127.0.0.1:6463/rpc?v=1",
                             Method = "POST",
@@ -8902,24 +8993,19 @@ do
                                 ["Content-Type"] = "application/json",
                                 ["Origin"] = "https://discord.com"
                             },
-                            Body = HttpService:JSONEncode({
+                            Body = game:GetService("HttpService"):JSONEncode({
                                 cmd = "INVITE_BROWSER",
-                                nonce = HttpService:GenerateGUID(false),
+                                nonce = game:GetService("HttpService"):GenerateGUID(false),
                                 args = {
                                     code = "sn2Etx6M8G",
                                 }
                             })
                         })
                     end)
-                    if reqSuccess then
-                    else
-                        warn("Uhm didnt work", reqErr)
-                    end
                 end
             end)    
         end
     })
-
 end
 
 getgenv().Library = Library
