@@ -38,6 +38,7 @@ local games = {
     [{133327835421432}] = "https://raw.githubusercontent.com/Iceware-RBLX/Roblox/refs/heads/main/Games/MidnightChasers/Main.lua"; -- Midnight Chasers (Tokyo CUSTOM)
     [{121510074321001}] = "https://raw.githubusercontent.com/Iceware-RBLX/Roblox/refs/heads/main/Games/MidnightChasers/Main.lua"; -- Midnight Chasers (Salt Flats CUSTOM)
     [{3351674303}] = "https://raw.githubusercontent.com/Iceware-RBLX/Roblox/refs/heads/main/Games/DrivingEmpire/Main.lua"; -- Driving Empire
+    [{71775212858107}] = "https://raw.githubusercontent.com/Iceware-RBLX/Roblox/refs/heads/main/Games/DrivingEmpire/Main.lua"; -- Driving Empire (Worldwide races)
     [{1554960397}] = "https://raw.githubusercontent.com/Iceware-RBLX/Roblox/refs/heads/main/Games/CDT/Main.lua"; -- Car Dealership Tycoon
 }
 
